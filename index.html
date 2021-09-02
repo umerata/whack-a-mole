@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    
+    <header>
+      <img src="assets/img/logo.png" alt="Whack A Mole" />
+    </header>
+
+    <div class="container container-1 main-options">
+      <button class="btn w-100 js-start" id="js-start" type="button">
+        Start
+      </button>
+      <button class="btn w-100" id="js-settings-show" type="button">
+        Settings
+      </button>
+    </div>
+
+    <div class="settings-popup sh-flex" id="settings-popup">
+      <button class="settings-popup__close" id="js-popup-close">close</button>
+      <div class="settings-popup__contents">
+
+        <h2 class="settings-popup__heading">SETTINGS</h2>
+        <h3>Difficulty</h3>
+
+        <div class="settings-popup__option">
+          <label class="setting-radio">
+            <input
+              type="radio"
+              value="0"
+              class="js-difficulty-radio"
+              name="difficulty"
+              checked
+            />
+            <span>Easy</span>
+          </label>
+          <label class="setting-radio">
+            <input
+              type="radio"
+              value="1"
+              class="js-difficulty-radio"
+              name="difficulty"
+            />
+            <span>Medium</span>
+          </label>
+          <label class="setting-radio">
+            <input
+              type="radio"
+              value="2"
+              class="js-difficulty-radio"
+              name="difficulty"
+            />
+            <span>Hard</span>
+          </label>
+        </div>
+        
+        <h3>Duration (sec)</h3>
+        <div class="settings-popup__option">
+          <!-- <label class="setting-radio">
+            <input type="radio" value="10" class="js-duration-radio" name="duration"  />
+            <span>10</span>
+          </label> -->
+          <label class="setting-radio">
+            <input
+              type="radio"
+              value="30"
+              class="js-duration-radio"
+              name="duration"
+              checked
+            />
+            <span>30</span>
+          </label>
+          <label class="setting-radio">
+            <input
+              type="radio"
+              value="45"
+              class="js-duration-radio"
+              name="duration"
+            />
+            <span>45</span>
+          </label>
+          <label class="setting-radio">
+            <input
+              type="radio"
+              value="60"
+              class="js-duration-radio"
+              name="duration"
+            />
+            <span>60</span>
+          </label>
+        </div>
+        
+        <h3>Custom cursor</h3>
+        <div class="settings-popup__option">
+          <label class="setting-radio">
+            <input
+              type="radio"
+              value="0"
+              class="js-custom-cursor-radio"
+              name="custom-cursor"
+              checked
+            />
+            <span>Disabled</span>
+          </label>
+          <label class="setting-radio">
+            <input
+              type="radio"
+              value="1"
+              class="js-custom-cursor-radio"
+              name="custom-cursor"
+            />
+            <span>Enabled</span>
+          </label>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="game" id="game-section">
+      <div class="game__inner">
+        
+        <div class="game__top-info">
+          <h4 class="game__top-start-timer">
+            Starting in <span id="js-game-start-timer">3</span>...
+          </h4>
+          <div class="game__top-stats sh-flex">
+            <h4>Hits: <span id="js-game-hit-score">0</span></h4>
+            <h4>Miss: <span id="js-game-miss-score">0</span></h4>
+          </div>
+        </div>
+        
+        <div class="table" id="game-table">
+          <div class="table__border"></div>
+          <div class="table__surface"></div>
+          <div class="table__contents">
+            <div class="hole__row hole__row--top">
+              <span class="hole" id="hole-1">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+              <span class="hole" id="hole-2">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+              <span class="hole" id="hole-3">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+              <span class="hole" id="hole-4">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+            </div>
+            <div class="hole__row hole__row--middle">
+              <span class="hole" id="hole-5">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+
+              <span class="hole" id="hole-6">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+
+              <span class="hole" id="hole-7">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+            </div>
+            <div class="hole__row hole__row--bottom">
+              <span class="hole" id="hole-8">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+              <span class="hole" id="hole-9">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+              <span class="hole" id="hole-10">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+              <span class="hole" id="hole-11">
+                <span class="hole__inner">
+                  <span class="hole__circle"></span>
+                  <span class="hole__animal"> </span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="container container-2 game__end">
+          <button class="btn w-100" id="js-main-menu" type="button">
+            Main menu
+          </button>
+        </div>
+
+        <div class="game__bottom-info">
+          <h4>Time: <span id="js-game-timeleft">0</span>s</h4>
+        </div>
+        
+      </div>
+    </div>
+
+    <span class="cursor"></span>
+
+    <script src="assets/js/game.js"></script>
+  </body>
+</html>

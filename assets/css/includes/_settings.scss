@@ -1,0 +1,113 @@
+
+h2{
+    font-size: 3rem;
+    color: #fff;
+    margin: 0;
+}
+
+h3{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.settings-popup{
+    width: 680px;
+    max-width: 80%;
+    background-color: $blue1;
+    border: 10px solid #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: $shadow1;
+    max-height: 90vh;
+    text-align: center;
+    flex-direction: column;
+    display: none;
+    margin-top: 30px;
+    &.show-start{
+        // display: flex !important;
+    }
+    h2{
+        text-transform: uppercase;
+        margin-top: 40px;
+    }
+    h3{
+        text-transform: uppercase;
+        margin: 30px 0 0 0;
+    }
+    &__close{
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        width: 52px;
+        height: 52px;
+        border-radius: 10px;
+        background-color: white;
+        border: 0;
+        font-size: 0;
+        &::before, &::after{
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 4px;
+            background-color: #000;
+            border-radius: 4px;
+            position: absolute;
+            right: 15px;
+            top: 26px;
+        }
+        &::before{
+            transform: rotate(45deg);
+        }
+        &::after{
+            content: '';
+            transform: rotate(-45deg);
+        }
+    }
+    &__contents{
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 100%;
+        padding: 0 20px 20px 20px;
+
+    }
+    &__option{
+        margin: 20px 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+}
+
+.setting-radio{
+    font-size:  1.85rem;
+    color: $blue2;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin: 0 10px 0 10px;
+    min-height: 60px;
+    display: inline-flex;
+    align-items: center;
+    span{ 
+        display: inline-block;
+        transition: all .15s ease-in-out;
+    }
+    input{
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        &:not(:checked) ~ span:hover{
+            // color: #fcff3b;
+            transform: scale(1.1);
+        }
+        &:checked ~ span{
+            color: #fcff3b;
+        }
+    }
+}

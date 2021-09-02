@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 20px;
+}
+
+body{
+    margin: 0;
+    padding-top: 120px;
+    background: rgb(255,101,58);
+    background: -moz-linear-gradient(left,  rgba(255,101,58,1) 0%, rgba(236,76,28,1) 100%);
+    background: -webkit-linear-gradient(left,  rgba(255,101,58,1) 0%,rgba(236,76,28,1) 100%);
+    background: linear-gradient(to right,  rgba(255,101,58,1) 0%,rgba(236,76,28,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff653a', endColorstr='#ec4c1c',GradientType=1 );   
+    font-family: 'Cooper Std';
+    line-height: 1.3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    max-width: 100%;
+}
+
+:focus{
+    outline: none;
+}
+
+button{
+    border: 0;
+    cursor: pointer;
+}
+
+header {
+    text-align: center; 
+    padding: 0 20px;
+}
+
+.btn{
+    font-size: 3rem;
+    color: #fff;
+    background-color: $blue1;
+    display: block;
+    border: 0;
+    text-transform: uppercase;
+    font-family: inherit;
+    margin: 0;
+    padding: 21px 0 4px 0;
+    line-height: 1;
+    cursor: pointer;
+    border: 8px solid #fff;
+    border-radius: 20px;
+    box-shadow: $shadow1;
+    transition: all .15s ease-in-out;
+    &:hover{
+        background-color: $blue3;
+        animation: btn-rotates;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes btn-rotates{
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(1.5deg);
+    }
+    75%{
+        transform: rotate(-1.5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.container{
+    max-width: 90%;
+    margin: 0 auto;
+    &-1{
+        width: 448px;
+    }
+    &-2{
+        width: 478px;
+    }
+}
+
+.w-100{
+    width: 100%;
+}
+
+.main-options{
+    margin-top: 145px;
+    margin-bottom: 50px;
+    .btn{
+        margin-top: 28px;
+    }
+}
+
+html.cursor-enabled{
+    cursor: none;
+    *, *:hover{
+        cursor: none;
+    }
+
+    .cursor {
+        position: fixed;
+        z-index: 10;
+        &:after{
+            content:'';
+            display: inline-block;
+            transition: none;
+            width: 34px;
+            height: 34px;
+            background-color: rgba(255, 0, 0, .85);
+            border: 2px solid black ;
+            pointer-events: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+    }
+}

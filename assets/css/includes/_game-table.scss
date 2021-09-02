@@ -1,0 +1,145 @@
+
+h4{
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff
+}
+
+.game{
+    width: 90%;
+    max-width: 1145px;
+    margin: 0 auto;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    display: none;
+    &__inner{
+        width: 100%;
+    }
+    &__top-start-timer{
+
+    }
+    &__top-stats{
+        display: flex;
+        justify-content: space-evenly;
+        display: none;
+    }
+    &__top-info,
+    &__bottom-info{
+        margin: 25px 0;
+        line-height: 1;
+    }
+    &__top-info{
+        margin-bottom: 15px;
+    }
+    &__end{
+        display: none;
+        margin-top: 70px;
+    }
+}
+
+
+.table{
+    width: 100%;
+    padding-bottom: 36%;
+    position: relative;
+    // margin: 150px 0;
+    &__border{
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+        clip-path: polygon(12% 0, 88% 0, 100% 100%, 0% 100%);
+    }
+    &__surface{
+        width: calc(100% - 36px);
+        height: calc(100% - 26px);
+        position: absolute;
+        top: 13px;
+        left: 18px;
+        clip-path: polygon(11.5% 0, 88.5% 0, 100% 100%, 0% 100%);
+        background-color: #f0f714;
+    }
+    &__contents{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 1.5% 9%;
+        left: 0;
+        top: 0;
+        text-align: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-evenly;
+    }
+}
+
+
+$hole: "hole";
+.#{$hole}{
+    height: 100%;
+    padding: 0 6%;
+    position: relative;
+    z-index: 1;
+    
+    &__inner{
+        height: calc(100% + 80px);
+        display: inline-block;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 47% / 22%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    &__circle{
+        width: 100%;
+        display: block;
+        height: calc(100% - 80px);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        border-radius: 50%;
+        pointer-events: all;
+    }
+    &__animal{
+        position: absolute;
+        left: 50%;
+        bottom: -40%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 67%;
+        background-image: url(../img/animal.png);
+        transition: all .16s ease-out;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 85% auto;
+        filter: drop-shadow(1px 4px 4px black);
+        pointer-events: all;
+        .#{$hole}--active &{
+            bottom: 0;
+            &:hover{
+                html:not(.cursor-enabled) &{
+                    cursor: crosshair;
+                }
+                background-image: url(../img/animal-hover.png);
+            }
+        }
+        .#{$hole}--hit &{
+            filter: drop-shadow(2px 4px 6px black) brightness(0.5);
+        }
+    }
+    
+    &__row{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+}

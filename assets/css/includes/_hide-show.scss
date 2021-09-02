@@ -1,0 +1,24 @@
+
+
+body{
+    .show-start{
+        display: block;
+        transition-timing-function: ease-in-out;
+        transition-property: opacity;
+        opacity: 0;
+        &.sh-flex{
+            display: flex;
+        }
+    }
+    .show-end{
+        opacity: 1;
+    }
+    .hide-start{
+        transition-timing-function: ease-in-out;
+        transition-property: opacity;
+        opacity: 0;
+    }
+    .hide-end{
+        display: none;
+    }
+}
